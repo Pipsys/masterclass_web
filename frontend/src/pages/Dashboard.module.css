@@ -1,0 +1,280 @@
+﻿.page {
+  --dash-teal: #156b78;
+  --dash-teal-strong: #0f5a65;
+  --dash-teal-soft: #e6f2f4;
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.main {
+  display: grid;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerActions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  gap: 16px;
+  justify-content: start;
+  align-items: stretch;
+}
+
+.statusBox {
+  padding: 14px 16px;
+  border-radius: 14px;
+  display: grid;
+  gap: 10px;
+  max-width: 560px;
+}
+
+.statusError {
+  border: 1px solid rgba(231, 94, 94, 0.45);
+}
+
+.statusError p {
+  margin: 0;
+}
+
+.card {
+  padding: 16px;
+  text-decoration: none;
+  min-height: 120px;
+  display: grid;
+  gap: 6px;
+  position: relative;
+  cursor: pointer;
+  backdrop-filter: blur(12px) saturate(150%);
+}
+
+.createCard {
+  min-height: 120px;
+  border-radius: 16px;
+  border: 1px dashed color-mix(in srgb, var(--dash-teal) 45%, var(--color-border));
+  background: var(--color-surface);
+  color: var(--color-text);
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 16px;
+}
+
+.createCard:hover {
+  border-color: color-mix(in srgb, var(--dash-teal) 70%, var(--color-border));
+  background: var(--dash-teal-soft);
+}
+
+.createIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.createText {
+  font-size: 18px;
+  color: var(--color-muted);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.cardEditMode {
+  animation: none;
+}
+
+.cardDeleteMode {
+  animation: wiggle 0.6s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(0.15deg); }
+  50% { transform: rotate(-0.15deg); }
+  75% { transform: rotate(0.1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.editRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.nameInput {
+  min-width: 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.saveButton {
+  border: 1px solid color-mix(in srgb, var(--dash-teal) 45%, transparent);
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--dash-teal) 14%, #ffffff 86%);
+  color: var(--dash-teal-strong);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.deleteButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: rgba(231, 94, 94, 0.18);
+  color: var(--color-text);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.side {
+  position: sticky;
+  top: 96px;
+  padding: 18px;
+  border-radius: 18px;
+  display: grid;
+  gap: 12px;
+  height: fit-content;
+}
+
+.side h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.sideButton {
+  background: var(--dash-teal);
+  border: 1px solid var(--dash-teal);
+  color: #ffffff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.sideButton:hover {
+  transform: translateY(-1px);
+  border-color: var(--dash-teal-strong);
+  background: var(--dash-teal-strong);
+}
+
+.sideHint {
+  margin-top: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 1.4;
+  min-height: 60px;
+}
+
+.tipLine {
+  margin: 0;
+  min-height: 42px;
+}
+
+.tipCursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 0.9s steps(1, end) infinite;
+  opacity: 0.8;
+}
+
+.confirmBackdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+
+.confirmModal {
+  width: min(420px, 92vw);
+  padding: 20px;
+  border-radius: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.confirmActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancelButton {
+  background: color-mix(in srgb, var(--dash-teal) 10%, #ffffff 90%);
+  border: 1px solid color-mix(in srgb, var(--dash-teal) 35%, var(--color-border));
+  color: var(--dash-teal-strong);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.dangerButton {
+  background: rgba(231, 94, 94, 0.9);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 980px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .side {
+    order: 2;
+  }
+}
+
+

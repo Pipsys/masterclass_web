@@ -1,0 +1,91 @@
+﻿.page {
+  display: grid;
+  gap: 18px;
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+}
+
+.boardArea {
+  min-width: 0;
+  position: relative;
+}
+
+.topbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  padding: 10px 6px 6px;
+}
+
+.topLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.topCenter {
+  text-align: center;
+  display: grid;
+  gap: 4px;
+}
+
+.topCenter h2 {
+  margin: 0;
+  font-size: clamp(20px, 2.4vw, 28px);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 12px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+
+.topRight {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.primary {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.secondary {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.sheetArea {
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

@@ -1,0 +1,11 @@
+﻿.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.dragOverlay {
+  transform: rotate(1deg) scale(1.02);
+  box-shadow: 0 18px 36px rgba(20, 28, 22, 0.18);
+}

@@ -1,0 +1,63 @@
+﻿* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+#root {
+  min-height: 100vh;
+  padding-top: 92px;
+}
+
+body.modal-open .app-navbar {
+  filter: blur(6px);
+  opacity: 0.62;
+  box-shadow: none;
+  pointer-events: none;
+  transition: filter 0.18s ease, opacity 0.18s ease;
+}
+
+body.modal-open .app-navbar.glass {
+  background: rgba(255, 255, 255, 0.56);
+  border-color: rgba(15, 17, 21, 0.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-attachment: scroll;
+  }
+}

@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+asyncpg
+alembic
+python-jose
+passlib[bcrypt]==1.7.4
+pydantic
+pydantic-settings
+email-validator
+bcrypt<4

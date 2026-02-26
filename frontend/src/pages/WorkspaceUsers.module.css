@@ -1,0 +1,59 @@
+﻿.page {
+  display: grid;
+  gap: 20px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 16px 18px;
+  border-radius: 18px;
+}
+
+.back {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+}
+
+.userCard {
+  padding: 16px;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.userCard h3 {
+  margin: 0 0 4px;
+}
+
+.userCard p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.role {
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--color-primary) 20%, #ffffff 80%);
+  font-size: 12px;
+}
+
+.note {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+

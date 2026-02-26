@@ -1,0 +1,31 @@
+﻿.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  position: relative;
+}
+
+:global(body.home-bg) .shell {
+  background: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  padding: 28px 0 48px;
+  position: relative;
+  z-index: 1;
+}
