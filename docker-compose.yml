@@ -22,7 +22,7 @@ services:
     environment:
       OCTOPIS_DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/masterclass_web
       OCTOPIS_SECRET_KEY: change_me_in_prod
-      OCTOPIS_API_CORS_ORIGINS: '["http://localhost"]'
+      OCTOPIS_API_CORS_ORIGINS: '["http://localhost","http://127.0.0.1","http://localhost:5173","http://127.0.0.1:5173"]'
       OCTOPIS_AUTH_RATE_LIMIT_ENABLED: "true"
       OCTOPIS_AUTH_RATE_LIMIT_REQUESTS: "20"
       OCTOPIS_AUTH_RATE_LIMIT_WINDOW_SECONDS: "60"
